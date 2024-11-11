@@ -41,9 +41,13 @@ jobs:
         shell: bash
         env:
           ENABLE_COMPATIBILITY_REPORTING: "ON"
-      - name: Upload artifacts
-        uses: alexellis/upload-assets@0.2.3
+      - name: tree
+        run: tree
+        shell: bash
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENABLE_COMPATIBILITY_REPORTING: "ON"
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
         with:
-          asset_paths: '["./build/bin/threeSD.exe"]'
+          name: exe
+          path: ./build/bin/threeSD.exe
