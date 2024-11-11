@@ -46,4 +46,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          asset_paths: '["./bin/threeSD.exe"]'
+          asset_paths: '["./build/bin/threeSD.exe"]'
