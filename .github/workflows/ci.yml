@@ -26,6 +26,10 @@ jobs:
         shell: bash
       - name: Set up MSVC
         uses: ilammy/msvc-dev-cmd@v1
+      - name: Install Qt5
+        run: |
+          choco install qt5-default -y
+        shell: bash
       - name: Build
         run: ./.ci/windows-msvc/build.sh
         shell: bash
