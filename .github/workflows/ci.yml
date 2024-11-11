@@ -26,10 +26,16 @@ jobs:
         shell: bash
       - name: Set up MSVC
         uses: ilammy/msvc-dev-cmd@v1
-      - name: Install Qt5
-        run: |
-          choco install qt5-default -y
-        shell: bash
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '5.15.2'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_msvc2019_64'
+          dir: '${{ github.workspace }}/example/'
+          install-deps: 'true'
+          set-env: 'true'
       - name: Build
         run: ./.ci/windows-msvc/build.sh
         shell: bash
