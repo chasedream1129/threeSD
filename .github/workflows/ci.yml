@@ -50,4 +50,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: exe
-          path: ./build/bin/threeSD.exe
+          path: ./build/bin/
