@@ -42,8 +42,8 @@ jobs:
         env:
           ENABLE_COMPATIBILITY_REPORTING: "ON"
       - name: tree
-        run: tree
-        shell: bash
+        run: tree /F
+        shell: powershell
         env:
           ENABLE_COMPATIBILITY_REPORTING: "ON"
       - name: Upload artifacts
